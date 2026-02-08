@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Baggy Men T-Shirt",
+        "price": 499,
+        "image": "https://picsum.photos/300/200?random=1"
+    },
+    {
+        "title": "Casual Hoodie",
+        "price": 899,
+        "image": "https://picsum.photos/300/200?random=2"
+    },
+    {
+        "title": "Denim Jacket",
+        "price": 1499,
+        "image": "https://picsum.photos/300/200?random=3"
+    },
+    {
+        "title": "SweatShirt Men",
+        "price": 999,
+        "image": "https://picsum.photos/300/200?random=4"
+    }
+]
