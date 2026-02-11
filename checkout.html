@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - E-Commerce</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+        </div>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right">
+            <input type="text" placeholder="Search" class="search">
+            <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- CHECKOUT PAGE -->
+    <main class="checkout-page" id="checkout-section">
+        <div class="checkout-container">
+            <h1 class="checkout-title">
+                <i class="fa-solid fa-bag-shopping"></i> Order Summary
+            </h1>
+
+            <!-- Order Items -->
+            <div class="checkout-content">
+                <div class="checkout-items">
+                    <div id="checkout-items-list"></div>
+                </div>
+
+                <!-- Order Total Summary -->
+                <div class="checkout-summary">
+                    <h2>Price Details</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="co-subtotal">Rs. 0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="co-shipping">Rs. 50.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (5%):</span>
+                        <span id="co-tax">Rs. 0.00</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="summary-row total">
+                        <span>Total Amount:</span>
+                        <span id="co-total">Rs. 0.00</span>
+                    </div>
+
+                    <button id="place-order-btn" class="place-order-btn">
+                        <i class="fa-solid fa-check-circle"></i> Place Order
+                    </button>
+
+                    <a href="cart.html" class="back-to-cart">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ORDER CONFIRMATION PAGE (hidden initially) -->
+    <main class="confirmation-page" id="confirmation-section" style="display:none;">
+        <div class="confirmation-container">
+            <div class="confirmation-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h1>Order Placed Successfully!</h1>
+            <p class="confirmation-msg">Thank you for your purchase! Your order has been confirmed.</p>
+
+            <div class="order-id">
+                <p>Order ID: <strong id="order-id-text"></strong></p>
+            </div>
+
+            <div class="confirmation-items" id="confirmation-items-list">
+                <!-- Items will be listed here -->
+            </div>
+
+            <div class="confirmation-total">
+                <span>Total Paid:</span>
+                <span id="confirmation-total-amount"></span>
+            </div>
+
+            <div class="confirmation-actions">
+                <a href="products.html" class="btn-shop-more">
+                    <i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+                </a>
+                <a href="index.html" class="btn-home">
+                    <i class="fa-solid fa-house"></i> Go to Home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Fashion Street, Mumbai, India</li>
+                    <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fa-solid fa-envelope"></i> support@ecommerce.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ECommerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/checkout.js"></script>
+</body>
+</html>

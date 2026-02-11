@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Frontend</title>
+    <title>Home - E-Commerce</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -11,24 +11,24 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="logo.png" alt="logo">
+            <img src="images/logo.png" alt="logo">
         </div>
         
         <nav class="navbar">
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="Products.html">Products</a></li>
-                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
         <div class="header-right">
-            <input type="text" placeholder="Search" class="search">
+            <input type="text" placeholder="Search for products" class="search">
 
             <div class="cart-container">
                 <i class="fa-solid fa-cart-shopping cart"></i>
-                <span class="badge">0</span>
+                <span id="cart-count">0</span>
             </div>
 
             <div class="hamburger">
@@ -40,7 +40,7 @@
     </header>
 
     <section id="hero">
-        <img src="hero.png" alt="streetwear model" class="hero-bg" >
+        <img src="images/hero.png" alt="streetwear model" class="hero-bg" >
         <div class="overlay"></div>
         <div class="discount-badge">
             <span class="line-1">Flat 40% OFF</span>
@@ -62,11 +62,46 @@
 
             <div class="hero-buttons">
                 <a href="products.html" class="btn primary">Shop Now</a>
-                <a href="#" class="btn secondary">View Collection</a>
             </div>
 
         </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Fashion Street, Mumbai, India</li>
+                    <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fa-solid fa-envelope"></i> support@ecommerce.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ECommerce. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="scripts/app.js"></script>
 </body>
 </html>
