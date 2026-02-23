@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ============================== */
 
     function getCart() {
-        return JSON.parse(localStorage.getItem("cart")) || [];
+        return JSON.parse(sessionStorage.getItem("cart")) || [];
     }
 
     function saveCart(cart) {
-        localStorage.setItem("cart", JSON.stringify(cart));
+        sessionStorage.setItem("cart", JSON.stringify(cart));
     }
 
     function updateCartCount() {
@@ -52,6 +52,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateCartCount();
+
+    /* ==============================
+       LOGIN / LOGOUT IN NAVBAR
+    ============================== */
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const navList = document.querySelector(".navbar ul");
+
+    if (navList) {
+        // Remove existing auth link if any
+        const existingAuthLink = navList.querySelector(".auth-link");
+        if (existingAuthLink) existingAuthLink.parentElement.remove();
+
+        if (isLoggedIn) {
+            // Show Logout
+            const logoutLi = document.createElement("li");
+            logoutLi.innerHTML = `<a href="#" class="auth-link" id="logout-link">Logout</a>`;
+            navList.appendChild(logoutLi);
+
+            document.getElementById("logout-link").addEventListener("click", (e) => {
+                e.preventDefault();
+                localStorage.removeItem("isLoggedIn");
+                window.location.href = "index.html";
+            });
+        } else {
+            // Show Login
+            const loginLi = document.createElement("li");
+            const isAuthPage = window.location.href.includes("auth.html");
+            loginLi.innerHTML = `<a href="auth.html" class="auth-link ${isAuthPage ? 'active' : ''}">Login</a>`;
+            navList.appendChild(loginLi);
+        }
+    }
 
     /* ==============================
        CART ICON CLICK
@@ -180,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.querySelector(".grid-cards");
     
     if (grid) {
-        const cachedProducts = localStorage.getItem("products");
+        const cachedProducts = sessionStorage.getItem("products");
 
         if (cachedProducts) {
             console.log("Products loaded from cache");
@@ -191,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fetch("https://fakestoreapi.com/products")
                 .then(res => res.json())
                 .then(data => {
-                    localStorage.setItem("products", JSON.stringify(data));
+                    sessionStorage.setItem("products", JSON.stringify(data));
                     renderProducts(data);
                 })
                 .catch(() => {

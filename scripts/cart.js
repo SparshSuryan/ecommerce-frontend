@@ -208,7 +208,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("checkout-btn").addEventListener("click", () => {
         const cart = getCart();
         if (cart.length > 0) {
-            window.location.href = "checkout.html";
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (isLoggedIn) {
+                window.location.href = "checkout.html";
+            } else {
+                localStorage.setItem("redirectAfterLogin", "checkout.html");
+                window.location.href = "auth.html";
+            }
         }
     });
 });

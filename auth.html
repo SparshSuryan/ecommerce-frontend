@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - E-Commerce</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <input type="text" placeholder="Search" class="search">
+            <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <main class="auth-page">
+        <div class="auth-wrapper">
+
+            <!-- Left Panel -->
+            <div class="auth-left">
+                <div class="auth-left-content">
+                    <img src="images/logo.png" alt="logo" class="auth-logo">
+                    <h2>Welcome to E-Commerce</h2>
+                    <p>Your one-stop destination for premium fashion at unbeatable prices.</p>
+                    <div class="auth-features">
+                        <div class="auth-feature">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <span>Fast Delivery</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Secure Payments</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <span>Easy Returns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Forms -->
+            <div class="auth-right">
+
+                <!-- Toggle Tabs -->
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="login-tab">Login</button>
+                    <button class="auth-tab" id="signup-tab">Sign Up</button>
+                </div>
+
+                <!-- LOGIN FORM -->
+                <div class="auth-form" id="login-form">
+                    <h2>Welcome Back!</h2>
+                    <p class="auth-subtitle">Please login to your account</p>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="login-email" placeholder="Enter your email" />
+                        </div>
+                        <span class="error-msg" id="login-email-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="login-password" placeholder="Enter your password" />
+                            <i class="fa-solid fa-eye toggle-password" id="toggle-login-pass"></i>
+                        </div>
+                        <span class="error-msg" id="login-password-error"></span>
+                    </div>
+
+                    <div class="auth-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember-me"> Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button class="auth-btn" id="login-btn">
+                        <i class="fa-solid fa-right-to-bracket"></i> Login
+                    </button>
+
+                    <p class="auth-switch">
+                        Don't have an account? 
+                        <span class="switch-link" id="go-to-signup">Sign Up</span>
+                    </p>
+                </div>
+
+                <!-- SIGNUP FORM -->
+                <div class="auth-form hidden" id="signup-form">
+                    <h2>Create Account</h2>
+                    <p class="auth-subtitle">Join us and start shopping!</p>
+
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="signup-name" placeholder="Enter your full name" />
+                        </div>
+                        <span class="error-msg" id="signup-name-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="signup-email" placeholder="Enter your email" />
+                        </div>
+                        <span class="error-msg" id="signup-email-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="signup-password" placeholder="Create a password" />
+                            <i class="fa-solid fa-eye toggle-password" id="toggle-signup-pass"></i>
+                        </div>
+                        <!-- Password Strength Indicator -->
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strength-fill"></div>
+                        </div>
+                        <span class="strength-text" id="strength-text"></span>
+                        <span class="error-msg" id="signup-password-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Confirm Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="signup-confirm" placeholder="Confirm your password" />
+                            <i class="fa-solid fa-eye toggle-password" id="toggle-confirm-pass"></i>
+                        </div>
+                        <span class="error-msg" id="signup-confirm-error"></span>
+                    </div>
+
+                    <button class="auth-btn" id="signup-btn">
+                        <i class="fa-solid fa-user-plus"></i> Create Account
+                    </button>
+
+                    <p class="auth-switch">
+                        Already have an account? 
+                        <span class="switch-link" id="go-to-login">Login</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Fashion Street, Mumbai, India</li>
+                    <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fa-solid fa-envelope"></i> support@ecommerce.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ECommerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+    <script type="module" src="scripts/auth.js"></script>
+</body>
+</html>
