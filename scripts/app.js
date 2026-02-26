@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("div");
             card.classList.add("card");
 
-            // click card → product page
+            // click card -> product page
             card.addEventListener("click", () => {
                 window.location.href = `product.html?id=${product.id}`;
             });
@@ -148,29 +148,28 @@ document.addEventListener("DOMContentLoaded", () => {
             const img = document.createElement("img");
             img.src = product.image;
             img.loading = "lazy";
-
+            img.decoding = "async";
+            img.width = 300;
+            img.height = 300;
+            img.alt = product.title;
 
             /* title */
             const title = document.createElement("h4");
             title.textContent = product.title;
-
 
             /* description */
             const desc = document.createElement("p");
             desc.textContent = product.description;
             desc.classList.add("desc");
 
-
             /* price */
             const price = document.createElement("p");
             price.textContent = "Rs. " + product.price;
-
 
             /* add to cart button */
             const button = document.createElement("button");
             button.textContent = "Add to Cart";
             button.classList.add("add-to-cart");
-
 
             button.addEventListener("click", (e) => {
 

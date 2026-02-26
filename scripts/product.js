@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Render product image with zoom container
     imageDiv.innerHTML = `
         <div class="zoom-container">
-            <img src="${product.image}" alt="${product.title}" class="product-img" />
+            <img src="${product.image}" class="product-img" loading="lazy" decoding="async"  width="500" height="500" alt="${product.title}">
         </div>
     `;
 

@@ -160,21 +160,19 @@ body {
 
 @media (max-width: 853px) {
     
-    /* 1. Hide the nav by default on mobile */
     .navbar {
         display: none; 
     }
 
-    /* 2. When active, it slides down under the header */
     .navbar.active {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
         position: absolute;
-        top: 70px; /* Exact height of your header */
+        top: 70px;
         left: 0;
         width: 100%;
-        background: rgba(173, 216, 230, 0.98); /* Matching your theme instead of red */
+        background: rgba(173, 216, 230, 0.98);
         padding: 20px 0;
         z-index: 2000;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -188,10 +186,9 @@ body {
         padding-left: 30px;
     }
 
-    /* 3. Ensure the hamburger is visible */
     .hamburger {
         display: flex;
-        order: 3; /* Keeps it to the far right */
+        order: 3;
         margin-left: 15px;
     }
 
@@ -200,7 +197,6 @@ body {
         gap: 10px;
     }
 
-    /* 4. Shrink search so it doesn't squash the cart/hamburger */
     .search {
         width: 120px; 
     }
@@ -215,7 +211,7 @@ body {
 #hero {
     position: relative;
 
-    min-height: calc(100vh - 80px); /* adjust to header height */
+    min-height: calc(100vh - 80px);
 
     display: flex;
     align-items: center;
@@ -363,8 +359,8 @@ body {
     line-height: 1.2;
 }
 .discount-badge .line-2 {
-    display: block; /* Forces it to the next line */
-    font-size: 0.8em; /* Makes it slightly smaller for better hierarchy */
+    display: block; 
+    font-size: 0.8em;
 }
 
 .design-dots {
@@ -593,7 +589,6 @@ body {
 }
 
 .product-image {
-    /* Container for zoom effect - styles handled by .zoom-container */
 }
 
 .product-info {
@@ -798,12 +793,10 @@ body {
         font-size: 14px;
     }
 
-    /* buttons full width for easier tapping */
     .add-btn {
         width: 100%;
     }
 
-    /* quantity centered */
     .quantity {
         justify-content: center;
     }
@@ -905,7 +898,6 @@ body {
     font-weight: bold;
 }
 
-/* Mobile: enable zoom on touch */
 @media (max-width: 768px) {
     .toast {
         right: 10px;
